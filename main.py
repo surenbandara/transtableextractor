@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import io
-from extractor import main
+from extractor import extractor
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def index():
         
 
         pdf_bytes = file.read()
-        table_data = main(pdf_bytes )
+        table_data = extractor(pdf_bytes )
         return jsonify({"table_data": table_data})
     return "OK"
 

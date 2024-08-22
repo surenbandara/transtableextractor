@@ -1,7 +1,7 @@
 import requests
 
 # Open the file in binary mode
-with open('Tes.pdf', 'rb') as file:
+with open('b.pdf', 'rb') as file:
     # Send a POST request with the file
     resp = requests.post("https://transtableextractor.vercel.app", files={'file': file})
 
