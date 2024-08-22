@@ -126,8 +126,7 @@ def address_and_price_idn(lis):
                 if(len(i.split(" "))==2):
                     price = int(i.split(" ")[0])
                 else:
-                    price = int(del_li[-1])
-                    del_li = del_li[:-1]
+                    price = int(dele_li.pop())
                 break
             else:
                 dele_li.append(i)
@@ -177,3 +176,8 @@ def main(pdf_byte):
 
     return data
     
+pdf_path = "b.pdf"
+with open(pdf_path, 'rb') as pdf_file:
+        pdf_bytes = pdf_file.read()
+
+print(main(pdf_byte=pdf_bytes))
